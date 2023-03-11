@@ -1,9 +1,14 @@
+* { 
+   box-sizing: border-box;
+}   
+
+
 body {
     background: #f2eeaf;
 }
 
 .container {
-    max-width: 1140px;
+    max-width: 46rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;  
@@ -25,7 +30,7 @@ body {
 }
 
 .mem-item .mem-title {
-    font-size: 2.2em;
+    font-size: 1.4em;
     font-weight: 700;
     cursor: pointer;
     display: flex;
@@ -78,7 +83,7 @@ body {
 } */
 
 .inputs:checked ~ .mem-img {   
-    max-height: 100vh;
+    max-height: 60vh;
 }
 
 .inputs:checked + .mem-title {
@@ -93,12 +98,12 @@ body {
 
 @media (hover: hover) {
     /* when hover is supported */
-    .mem-item .mem-title:hover:after {
+    .mem-item:hover >.mem-title:after {
         transform: rotate(180deg);
     }
 
-    .mem-item .mem-title:hover ~ .mem-img {    
-        max-height: 100vh;
+    .mem-item:hover > .mem-img {    
+        max-height: 60vh;
     }
 
     .container:hover > .mem-item > .mem-title {
@@ -111,6 +116,11 @@ body {
   }
 
   @media (max-width: 1180px) {
+
+
+    .mem-item > .mem-title:after {
+        visibility: visible;
+    }
 
     .container {
         padding: 2em;
