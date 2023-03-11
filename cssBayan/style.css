@@ -7,6 +7,7 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;  
+    margin-top: 100px;
 }
 
 
@@ -36,6 +37,7 @@ body {
     content: "\f0d8";
     margin-left: auto;
     visibility: hidden;
+    transition: rotate 1s ease-in-out;
 }
 
 
@@ -68,7 +70,7 @@ body {
 }
 
 .mem-item .mem-title:hover:after {
-    content: "\f0d7";
+    transform: rotate(180deg);
 }
 
 .mem-item .mem-title:hover ~ .mem-img {    
@@ -84,8 +86,12 @@ body {
 }
 
 .inputs:checked + .mem-title:after {
-    content: "\f0d7";
+    transform: rotate(180deg);
 }
-
+.carret {
+    font-family: "Font Awesome 5 Free";     
+    content: "\f0d8";
+    font-size: 30px;
+}
 
 
