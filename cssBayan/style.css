@@ -6,9 +6,9 @@ body {
     max-width: 1140px;
     margin: 0 auto;
     display: flex;
-    flex-direction: column;   
-   
+    flex-direction: column;  
 }
+
 
 .title-h1 {
     font-size: 42px;
@@ -33,7 +33,9 @@ body {
     font-family: "Font Awesome 5 Free";     
     content: "\f0d8";
     margin-left: auto;
+    visibility: hidden;
 }
+
 
 .mem-item input{
     display: none;
@@ -51,4 +53,8 @@ body {
     margin: 0 auto; 
     object-fit: contain;
      cursor: pointer;
+}
+
+.container:hover > .mem-item > .mem-title:after {
+   visibility: visible;
 }
