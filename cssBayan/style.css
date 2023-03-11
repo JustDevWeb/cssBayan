@@ -27,7 +27,9 @@ body {
     font-weight: 700;
     cursor: pointer;
     display: flex;
+    color: blue;
 }
+
 
 .mem-item .mem-title::after {
     font-family: "Font Awesome 5 Free";     
@@ -37,24 +39,53 @@ body {
 }
 
 
-.mem-item input{
-    display: none;
-}
 
 .mem-item .mem-img {
     display: flex;
     justify-content: center;
     margin-top: 30px;
-  
+    max-height: 0;   
+    transition: max-height 1s ease-in-out;
 }
 
 .mem-item .mem-img img {
     width: 50%;
     margin: 0 auto; 
     object-fit: contain;
-     cursor: pointer;
+    cursor: pointer;
 }
+
+.inputs {
+    display: none;
+}
+
+.container:hover > .mem-item > .mem-title {
+   color: black;
+ }
 
 .container:hover > .mem-item > .mem-title:after {
    visibility: visible;
 }
+
+.mem-item .mem-title:hover:after {
+    content: "\f0d7";
+}
+
+.mem-item .mem-title:hover ~ .mem-img {    
+    max-height: 1000px;
+}
+
+.inputs:checked ~ .mem-img {   
+    max-height: 1000px;
+}
+
+.inputs:checked + .mem-title {
+   color: black;
+}
+
+.inputs:checked + .mem-title:after {
+    content: "\f0d7";
+}
+
+
+
