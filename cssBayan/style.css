@@ -1,7 +1,47 @@
+body {
+    background: #f2eeaf;
+}
+
 .container {
     max-width: 1140px;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;   
+   
+}
+
+.title-h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.mem-item {
+    display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-top: 50px;
+}
+
+.mem-item .mem-title {
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.mem-item input{
+    display: none;
+}
+
+.mem-item .mem-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  
+}
+
+.mem-item .mem-img img {
+    width: 50%;
+    margin: 0 auto; 
+    object-fit: contain;
+     cursor: pointer;
 }
