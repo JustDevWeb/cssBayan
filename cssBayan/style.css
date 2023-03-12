@@ -1,0 +1,156 @@
+* { 
+   box-sizing: border-box;
+}   
+
+
+body {
+    background: #f2eeaf;
+}
+
+.container {
+    max-width: 46rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;  
+    padding-bottom: 10%;   
+}
+
+
+.title-h1 {
+    font-size: 3em;
+    font-weight: 700;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.mem-item {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.mem-item .mem-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.mem-item .mem-label .title-box {
+    font-size: 1.4em;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    color: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.mem-item .mem-label .title-box .carret {
+    transition: transform .4s ease-in-out;
+    visibility: hidden;
+}
+
+
+.mem-item .mem-label .mem-img {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    max-height: 0vh;   
+    transition: max-height 1s ease-in-out;
+    cursor: pointer;
+}
+
+
+.mem-item .mem-img img {
+    width: 50%;
+    margin: 0 auto; 
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.inputs {
+    display: none;
+}
+
+
+.inputs:checked ~ .mem-img {   
+    max-height: 60vh;
+}
+
+.inputs:checked ~ .title-box {
+   color: black;
+}
+
+.inputs:checked ~ .title-box .carret {
+    transform: rotate(180deg);
+}
+
+
+@media (hover: hover) {
+    /* when hover is supported */
+    .mem-item:hover > .mem-label .carret {
+        transform: rotate(180deg);
+    }
+
+    .mem-item:hover > .mem-label .mem-img {    
+        max-height: 60vh;
+    }
+
+    .container:hover > .mem-item > .mem-label {
+        color: black;
+      }
+     
+     .container:hover > .mem-item .mem-label .title-box .carret {
+        visibility: visible;
+     }
+  }
+
+  @media (max-width: 1180px) {
+
+    .mem-item .mem-label .title-box .carret {        
+        visibility: visible;
+    }
+   
+
+    .container {
+        padding: 2em;
+    }
+
+    .title-h1 {
+        font-size: 3em;        
+    }
+
+    .mem-item .mem-label .title-box {
+        font-size: 1.5em;        
+    }
+
+    .mem-item .mem-label img {
+        width: 80%;        
+    }   
+
+  }
+  
+
+  @media (max-width: 568px) {
+    
+
+    .title-h1 {
+        font-size: 2em;        
+    }
+
+    .mem-item .mem-label .title-box {
+        font-size: 1.2em;
+        
+    }
+
+    .mem-item .mem-label .mem-img img {
+        width: 100%;        
+    }
+
+    .mem-item .mem-label .title-box {        
+        visibility: visible;
+    }
+    
+  }
+
+  
