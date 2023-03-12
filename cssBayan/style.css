@@ -35,15 +35,15 @@ body {
     cursor: pointer;
     display: flex;
     color: blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 
-.mem-item .mem-title::after {
-    font-family: "Font Awesome 5 Free";     
-    content: "\f0d8";
-    margin-left: auto;
-    visibility: hidden;
+.mem-title .carret {
     transition: transform .4s ease-in-out;
+    visibility: hidden;
 }
 
 
@@ -90,7 +90,7 @@ body {
    color: black;
 }
 
-.inputs:checked + .mem-title:after {
+.inputs:checked ~ .mem-title .carret {
     transform: rotate(180deg);
 
 }
@@ -98,7 +98,7 @@ body {
 
 @media (hover: hover) {
     /* when hover is supported */
-    .mem-item:hover >.mem-title:after {
+    .mem-item:hover > .mem-title .carret {
         transform: rotate(180deg);
     }
 
@@ -110,17 +110,17 @@ body {
         color: black;
       }
      
-     .container:hover > .mem-item > .mem-title:after {
+     .container:hover > .mem-item > .mem-title .carret {
         visibility: visible;
      }
   }
 
   @media (max-width: 1180px) {
 
-
-    .mem-item > .mem-title:after {
+    .mem-title .carret {        
         visibility: visible;
     }
+   
 
     .container {
         padding: 2em;
@@ -131,7 +131,7 @@ body {
     }
 
     .mem-item .mem-title {
-        font-size: 2em;        
+        font-size: 1.5em;        
     }
 
     .mem-item .mem-img img {
@@ -152,12 +152,16 @@ body {
     }
 
     .mem-item .mem-title {
-        font-size: 1.3em;
+        font-size: 1.2em;
         
     }
 
     .mem-item .mem-img img {
         width: 100%;        
+    }
+
+    .mem-title .carret {        
+        visibility: visible;
     }
     
   }
